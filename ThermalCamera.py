@@ -9,7 +9,7 @@ def thermal_camera():
     else:
        rval = False
 
-# Create an object for executing CLAHE.  
+ 
     
     while rval:
     # Get a Region of Interest slice - ignore the last 3 rows. 
@@ -18,9 +18,9 @@ def thermal_camera():
     # Normalizing frame to range [0, 255], and get the result as type uint8.
        normed = cv2.normalize(frame_roi, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 
-    # Apply CLAHE - contrast enhancement.
-    # Note: apply the CLAHE on the uint8 image after normalize.
-    # CLAHE supposed to work with uint16 - you may try using it without using cv2.normalize
+     
+     
+    # CLAHE supposed to work with uint16 -  so we use np.uint8 in cv2.normalize
        
        """
        cl1 = clahe.apply(ex)
